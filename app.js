@@ -114,12 +114,28 @@ function renderQuestions(){
 }
 
 function startTimer(){
+
+  let timerBox = document.createElement("div");
+  timerBox.className="timerBox";
+  timerBox.id="timerBox";
+  document.body.appendChild(timerBox);
+
   timeLeft = currentExam.timer * 60;
+
   timerInterval = setInterval(()=>{
     timeLeft--;
+
+    let minutes = Math.floor(timeLeft/60);
+    let seconds = timeLeft%60;
+    seconds = seconds<10 ? "0"+seconds : seconds;
+
+    document.getElementById("timerBox").innerText=
+      "⏱ "+minutes+":"+seconds;
+
     if(timeLeft<=0){
       submitExam();
     }
+
   },1000);
 }
 
