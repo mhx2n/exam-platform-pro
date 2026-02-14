@@ -181,15 +181,18 @@ async function showLeaderboard(examId){
 
   results.sort((a,b)=>b.score-a.score);
 
-  let html="<div class='card'><h3>Leaderboard</h3>";
+  let html="<div class='card'><h3>🏆 Leaderboard</h3>";
 
   results.slice(0,10).forEach((r,i)=>{
-    html+=`${i+1}. ${r.name} - ${r.score}<br>`;
+    html+=`
+      <div class="leaderboard-item">
+        ${i+1}. <b>${r.name}</b> — ${r.score}
+      </div>
+    `;
   });
 
   html+="</div>";
 
   document.getElementById("resultArea").innerHTML+=html;
 }
-
 window.onload = loadCategories;
