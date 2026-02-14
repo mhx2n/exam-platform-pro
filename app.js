@@ -29,8 +29,12 @@ window.showExams = function(subject){
 
   let filtered = exams.filter(e=>e.subject===subject);
 
-  let html="<div class='card'><h3>Exams</h3>";
-
+  let html+=`<div class="card">
+    <h3>${e.title}</h3>
+    <p>${e.subject} | ${e.university}</p>
+    <p>Mode: ${e.mode}</p>
+    <button onclick="startExam('${e.id}')">Start Exam</button>
+    </div>`;
   filtered.forEach(e=>{
     html+=`
       <div class="card">
