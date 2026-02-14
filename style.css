@@ -1,0 +1,40 @@
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  color:white;
+}
+
+.card{
+  background:#1e293b;
+  padding:20px;
+  margin:15px;
+  border-radius:12px;
+  box-shadow:0 0 15px rgba(0,255,255,0.2);
+}
+
+button{
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
+  background:#06b6d4;
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+input,select{
+  padding:8px;
+  margin:5px 0;
+  border-radius:6px;
+  border:none;
+}
+
+.correct{ background:#14532d; }
+.wrong{ background:#7f1d1d; }
+
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:15px;
+}
