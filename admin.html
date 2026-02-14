@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="firebase.js"></script>
+<script type="module" src="app.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<h2>🔐 Admin Login</h2>
+
+<div class="card" id="loginCard">
+  <input type="email" id="email" placeholder="Admin Email"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button onclick="adminLogin()">Login</button>
+</div>
+
+<div id="dashboard" style="display:none;">
+
+<h2>📊 Admin Dashboard</h2>
+
+<div class="card">
+  <h3>Create Exam</h3>
+
+  <input type="text" id="title" placeholder="Exam Title"><br>
+
+  <input type="text" id="subject" placeholder="Subject"><br>
+  <input type="text" id="university" placeholder="University"><br>
+  <input type="text" id="department" placeholder="Department"><br>
+
+  <input type="number" id="timer" placeholder="Timer (minutes)"><br>
+  <input type="number" id="negative" placeholder="Negative Mark" step="0.1"><br>
+
+  <label>
+    <input type="checkbox" id="shuffle"> Shuffle Questions
+  </label><br>
+
+  <select id="mode">
+    <option value="practice">Practice Mode</option>
+    <option value="live">Live Mode</option>
+  </select><br><br>
+
+  <input type="file" id="csvFile"><br><br>
+
+  <button onclick="createExam()">Create & Publish</button>
+</div>
+
+<div class="card">
+  <h3>All Exams</h3>
+  <div id="examList"></div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
